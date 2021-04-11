@@ -30,6 +30,17 @@ public class MobilePhone {
 
         return -1;
     }
+    public void printContact(String name){
+        int index=search(name);
+        if (index >=0) {
+            Contacts searched=contact.get(index);
+            System.out.println("Contact name is: " +searched.getName()+" and his/her phone number is: "+ searched.getNumber());
+        }
+        else{
+            System.out.println("The contact you want doesn't exist");
+
+        }
+    }
     public void update(String oldName,String newName,String number){
         int indexToBeUpdated=search(oldName);
         if (indexToBeUpdated >=0) {
@@ -47,7 +58,7 @@ public class MobilePhone {
             System.out.println("Contact"+contacts.getName()+" is removed");
         }
     }
-    public  void printContacts(){
+    public  void printList(){
         System.out.println("Contacts :");
         for (int i = 0; i < this.contact.size(); i++) {
             System.out.println(i+"."+this.contact.get(i).getName()+"----"+this.contact.get(i).getNumber());

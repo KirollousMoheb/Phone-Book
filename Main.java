@@ -14,7 +14,8 @@ public class Main {
         System.out.println("3)Update Existing Contact");
         System.out.println("4)Search By name");
         System.out.println("5)Remove Existing Contact");
-        System.out.println("6)EXIT");
+        System.out.println("6)Show Menu");
+        System.out.println("7)EXIT");
 
 
     }
@@ -40,7 +41,7 @@ public class Main {
     }
 
     private static void showContacts(){
-        mobilePhone.printContacts();
+        mobilePhone.printList();
 
     }
     private static void updateContact(){
@@ -59,6 +60,11 @@ public class Main {
 
     }
     private static void searchContact(){
+        System.out.println("Enter the name of the contact you want to find");
+        String name=input.next();
+        mobilePhone.printContact(name);
+
+
 
     }
     private static void removeContact(){
@@ -100,6 +106,8 @@ public class Main {
                     removeContact();
                     break;
                 case 5:
+                    printOptions();
+                case 6:
                     quit=true;
                     System.out.println("Shut Down");
                     break;
